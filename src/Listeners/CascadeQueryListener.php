@@ -21,7 +21,7 @@ class CascadeQueryListener
             return $backtraceClass === $this->listenClass;
         })->first();
         $checkBacktrace = null;
-        $backtraceFile = (isset($debugBacktrace['file'])) ? $debugBacktrace['file'] : null;
+        $backtraceFile = (isset($debugBacktrace['file'])) ? $debugBacktrace['file'] : '';
         $backtraceFunction = (isset($debugBacktrace['function'])) ? $debugBacktrace['function'] : null;
         if (!is_null($debugBacktrace) && str_contains($backtraceFile, 'Illuminate/Database/Eloquent/SoftDeletingScope.php') && $backtraceFunction == 'update') {
             $checkBacktrace = [
